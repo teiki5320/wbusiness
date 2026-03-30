@@ -305,142 +305,9 @@ transition: all 0.2s;
 .btn-wa svg { width: 14px; height: 14px; }
 
 /* ─── COULEURS THÈMES CATÉGORIES ─── */
-.thumb-kits { background: linear-gradient(135deg, #1A1408 0%, #2D1F00 100%); }
-.thumb-scripts { background: linear-gradient(135deg, #0A1A14 0%, #002D1E 100%); }
-.thumb-guides { background: linear-gradient(135deg, #0A0D1A 0%, #001030 100%); }
-.thumb-packs { background: linear-gradient(135deg, #1A0A10 0%, #2D0018 100%); }
-
-/* ─── SCRIPTS SECTION ─── */
-.scripts-section {
-background: var(--dark2);
-border-top: 1px solid rgba(201,168,76,0.12);
-border-bottom: 1px solid rgba(201,168,76,0.12);
-padding: 60px 20px;
-position: relative;
-z-index: 1;
-}
-
-.scripts-grid {
-max-width: 860px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-gap: 16px;
-}
-
-.script-card {
-background: var(--dark3);
-border: 1px solid rgba(201,168,76,0.2);
-border-radius: 14px;
-padding: 20px;
-}
-
-.script-label {
-font-size: 0.68rem;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(--gold);
-margin-bottom: 10px;
-}
-
-.script-card h4 {
-font-family: ‘Playfair Display’, serif;
-font-size: 0.95rem;
-color: var(--cream);
-margin-bottom: 12px;
-}
-
-.script-msg {
-background: rgba(0,0,0,0.3);
-border-left: 2px solid var(--gold);
-border-radius: 0 8px 8px 0;
-padding: 12px 14px;
-font-size: 0.8rem;
-color: var(--text);
-line-height: 1.6;
-font-style: italic;
-margin-bottom: 14px;
-white-space: pre-line;
-}
-
-.btn-copy {
-background: transparent;
-border: 1px solid rgba(201,168,76,0.35);
-color: var(--gold);
-padding: 7px 16px;
-border-radius: 50px;
-font-size: 0.75rem;
-cursor: pointer;
-font-family: ‘DM Sans’, sans-serif;
-transition: all 0.2s;
-display: inline-flex;
-align-items: center;
-gap: 6px;
-}
-.btn-copy:hover { background: rgba(201,168,76,0.1); }
-.btn-copy.copied { border-color: var(--wa); color: var(--wa); }
-
-/* ─── LINK IN BIO ─── */
-.linkinbio {
-padding: 60px 20px;
-max-width: 480px;
-margin: 0 auto;
-position: relative;
-z-index: 1;
-}
-
-.bio-avatar {
-width: 80px;
-height: 80px;
-border-radius: 50%;
-background: linear-gradient(135deg, var(--gold), #8B5E00);
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 2rem;
-margin: 0 auto 16px;
-border: 2px solid rgba(201,168,76,0.4);
-}
-
-.bio-links {
-display: flex;
-flex-direction: column;
-gap: 12px;
-margin-top: 28px;
-}
-
-.bio-link {
-display: flex;
-align-items: center;
-gap: 14px;
-background: var(--dark2);
-border: 1px solid rgba(201,168,76,0.18);
-border-radius: 14px;
-padding: 14px 18px;
-text-decoration: none;
-color: var(--text);
-transition: all 0.25s;
-position: relative;
-overflow: hidden;
-}
-.bio-link::before {
-content: ‘’;
-position: absolute;
-left: 0; top: 0; bottom: 0;
-width: 3px;
-background: var(--gold);
-transform: scaleY(0);
-transition: transform 0.2s;
-border-radius: 0 2px 2px 0;
-}
-.bio-link:hover { border-color: rgba(201,168,76,0.45); transform: translateX(4px); }
-.bio-link:hover::before { transform: scaleY(1); }
-
-.bio-link-icon { font-size: 1.4rem; flex-shrink: 0; }
-.bio-link-text {}
-.bio-link-title { font-size: 0.88rem; font-weight: 500; color: var(--cream); }
-.bio-link-sub { font-size: 0.74rem; color: var(--muted); margin-top: 2px; }
-.bio-link-arrow { margin-left: auto; color: var(--gold); font-size: 0.9rem; opacity: 0.6; }
+.thumb-gaming    { background: linear-gradient(135deg, #0A0D1A 0%, #001030 100%); }
+.thumb-business  { background: linear-gradient(135deg, #1A1408 0%, #2D1F00 100%); }
+.thumb-createurs { background: linear-gradient(135deg, #0A1A14 0%, #002D1E 100%); }
 
 /* ─── FOOTER ─── */
 footer {
@@ -454,22 +321,6 @@ z-index: 1;
 footer .logo { font-family: ‘Playfair Display’, serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 3px; margin-bottom: 8px; }
 footer p { font-size: 0.75rem; color: var(--muted); }
 
-/* ─── TOAST ─── */
-.toast {
-position: fixed;
-bottom: 24px;
-left: 50%;
-transform: translateX(-50%) translateY(80px);
-background: var(--wa);
-color: #fff;
-padding: 10px 22px;
-border-radius: 50px;
-font-size: 0.85rem;
-z-index: 999;
-transition: transform 0.3s ease;
-pointer-events: none;
-}
-.toast.show { transform: translateX(-50%) translateY(0); }
 
 /* ─── ANIMATIONS ─── */
 @keyframes fadeDown {
@@ -519,25 +370,23 @@ to { opacity: 1; transform: translateY(0); }
 
   <div class="tabs">
     <button class="tab active" onclick="filterCat('all')">Tout voir</button>
-    <button class="tab" onclick="filterCat('kits')">Kits Éditoriaux</button>
-    <button class="tab" onclick="filterCat('scripts')">Scripts TikTok/Reels</button>
-    <button class="tab" onclick="filterCat('guides')">Guides PDF</button>
-    <button class="tab" onclick="filterCat('packs')">Packs Visuels</button>
+    <button class="tab" onclick="filterCat('gaming')">Gaming</button>
+    <button class="tab" onclick="filterCat('business')">Business</button>
+    <button class="tab" onclick="filterCat('createurs')">Créateurs</button>
   </div>
 
   <div class="products-grid" id="grid">
 
-```
-<!-- KITS -->
-<div class="card visible" data-cat="kits">
-  <div class="card-thumb thumb-kits">🎨</div>
+<!-- GAMING -->
+<div class="card visible" data-cat="gaming">
+  <div class="card-thumb thumb-gaming">🎮</div>
   <div class="card-body">
-    <div class="card-cat">Kit Éditorial</div>
-    <h3>African Brand Kit</h3>
-    <p>Palette de couleurs, typographies et motifs afro-inspirés pour créer une identité visuelle authentique.</p>
+    <div class="card-cat">Gaming</div>
+    <h3>UC PUBG</h3>
+    <p>Rechargez vos Unknown Cash PUBG Mobile rapidement et en toute sécurité.</p>
     <div class="card-footer">
-      <span class="price">12€</span>
-      <a class="btn-wa" href="https://wa.me/33672542806?text=Bonjour%20Afrotok%20%F0%9F%91%8B%20Je%20souhaite%20commander%20le%20*African%20Brand%20Kit*%20(12%E2%82%AC).%20Merci%20!" target="_blank">
+      <span class="price">Sur demande</span>
+      <a class="btn-wa" href="https://wa.me/33672542806?text=Bonjour+je+veux+commander+UC+PUBG" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Commander
       </a>
@@ -545,15 +394,15 @@ to { opacity: 1; transform: translateY(0); }
   </div>
 </div>
 
-<div class="card visible" data-cat="kits">
-  <div class="card-thumb thumb-kits">📐</div>
+<div class="card visible" data-cat="gaming">
+  <div class="card-thumb thumb-gaming">⚽</div>
   <div class="card-body">
-    <div class="card-cat">Kit Éditorial</div>
-    <h3>Templates Stories Canva</h3>
-    <p>30 templates stories Instagram/TikTok aux motifs africains, prêts à personnaliser sur Canva.</p>
+    <div class="card-cat">Gaming</div>
+    <h3>FIFA Points</h3>
+    <p>Des FIFA Points pour booster votre équipe Ultimate Team et dominer vos adversaires.</p>
     <div class="card-footer">
-      <span class="price">9€</span>
-      <a class="btn-wa" href="https://wa.me/33672542806?text=Bonjour%20Afrotok%20%F0%9F%91%8B%20Je%20souhaite%20commander%20les%20*Templates%20Stories%20Canva*%20(9%E2%82%AC).%20Merci%20!" target="_blank">
+      <span class="price">Sur demande</span>
+      <a class="btn-wa" href="https://wa.me/33672542806?text=Bonjour+je+veux+commander+FIFA+Points" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Commander
       </a>
@@ -561,16 +410,16 @@ to { opacity: 1; transform: translateY(0); }
   </div>
 </div>
 
-<!-- SCRIPTS -->
-<div class="card visible" data-cat="scripts">
-  <div class="card-thumb thumb-scripts">🎬</div>
+<!-- GAMING SUITE -->
+<div class="card visible" data-cat="gaming">
+  <div class="card-thumb thumb-gaming">🎁</div>
   <div class="card-body">
-    <div class="card-cat">Scripts TikTok/Reels</div>
-    <h3>Pack 20 Scripts Viraux</h3>
-    <p>20 scripts storytelling prêts à tourner sur TikTok et Reels, thèmes culture africaine et diaspora.</p>
+    <div class="card-cat">Gaming</div>
+    <h3>Google Play</h3>
+    <p>Carte cadeau Google Play pour vos achats d'applications, jeux et contenus numériques.</p>
     <div class="card-footer">
-      <span class="price">15€</span>
-      <a class="btn-wa" href="https://wa.me/33672542806?text=Bonjour%20Afrotok%20%F0%9F%91%8B%20Je%20souhaite%20commander%20le%20*Pack%2020%20Scripts%20Viraux*%20(15%E2%82%AC).%20Merci%20!" target="_blank">
+      <span class="price">Sur demande</span>
+      <a class="btn-wa" href="https://wa.me/33672542806?text=Bonjour+je+veux+commander+Google+Play" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Commander
       </a>
@@ -578,15 +427,15 @@ to { opacity: 1; transform: translateY(0); }
   </div>
 </div>
 
-<div class="card visible" data-cat="scripts">
-  <div class="card-thumb thumb-scripts">✍️</div>
+<div class="card visible" data-cat="gaming">
+  <div class="card-thumb thumb-gaming">📺</div>
   <div class="card-body">
-    <div class="card-cat">Scripts TikTok/Reels</div>
-    <h3>Scripts Contes & Légendes</h3>
-    <p>10 scripts basés sur des contes africains traditionnels adaptés au format court vidéo moderne.</p>
+    <div class="card-cat">Gaming</div>
+    <h3>Netflix</h3>
+    <p>Abonnement Netflix Premium pour profiter des meilleurs films, séries et documentaires.</p>
     <div class="card-footer">
-      <span class="price">10€</span>
-      <a class="btn-wa" href="https://wa.me/33672542806?text=Bonjour%20Afrotok%20%F0%9F%91%8B%20Je%20souhaite%20commander%20les%20*Scripts%20Contes%20%26%20L%C3%A9gendes*%20(10%E2%82%AC).%20Merci%20!" target="_blank">
+      <span class="price">Sur demande</span>
+      <a class="btn-wa" href="https://wa.me/33672542806?text=Bonjour+je+veux+commander+Netflix" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Commander
       </a>
@@ -594,16 +443,16 @@ to { opacity: 1; transform: translateY(0); }
   </div>
 </div>
 
-<!-- GUIDES -->
-<div class="card visible" data-cat="guides">
-  <div class="card-thumb thumb-guides">📖</div>
+<!-- BUSINESS -->
+<div class="card visible" data-cat="business">
+  <div class="card-thumb thumb-business">💬</div>
   <div class="card-body">
-    <div class="card-cat">Guide PDF</div>
-    <h3>Guide Créateur Afro 2025</h3>
-    <p>Stratégie complète pour percer sur TikTok et Instagram en tant que créateur de contenu africain.</p>
+    <div class="card-cat">Business</div>
+    <h3>Guide WhatsApp</h3>
+    <p>Le guide complet pour développer et monétiser votre business via WhatsApp Business.</p>
     <div class="card-footer">
-      <span class="price">18€</span>
-      <a class="btn-wa" href="https://wa.me/33672542806?text=Bonjour%20Afrotok%20%F0%9F%91%8B%20Je%20souhaite%20commander%20le%20*Guide%20Cr%C3%A9ateur%20Afro%202025*%20(18%E2%82%AC).%20Merci%20!" target="_blank">
+      <span class="price">4 500 FCFA</span>
+      <a class="btn-wa" href="https://wa.me/33672542806?text=Bonjour+je+veux+commander+Guide+WhatsApp" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Commander
       </a>
@@ -611,15 +460,15 @@ to { opacity: 1; transform: translateY(0); }
   </div>
 </div>
 
-<div class="card visible" data-cat="guides">
-  <div class="card-thumb thumb-guides">🗺️</div>
+<div class="card visible" data-cat="business">
+  <div class="card-thumb thumb-business">📱</div>
   <div class="card-body">
-    <div class="card-cat">Guide PDF</div>
-    <h3>Monétiser sa Passion Afro</h3>
-    <p>Guide pratique pour vendre du contenu digital lié à la culture africaine : plateformes, prix, marketing.</p>
+    <div class="card-cat">Business</div>
+    <h3>Guide Téléphone</h3>
+    <p>Maîtrisez votre smartphone pour booster votre productivité et générer des revenus en ligne.</p>
     <div class="card-footer">
-      <span class="price">14€</span>
-      <a class="btn-wa" href="https://wa.me/33672542806?text=Bonjour%20Afrotok%20%F0%9F%91%8B%20Je%20souhaite%20commander%20*Mon%C3%A9tiser%20sa%20Passion%20Afro*%20(14%E2%82%AC).%20Merci%20!" target="_blank">
+      <span class="price">6 000 FCFA</span>
+      <a class="btn-wa" href="https://wa.me/33672542806?text=Bonjour+je+veux+commander+Guide+Telephone" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.298-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Commander
       </a>
@@ -627,16 +476,16 @@ to { opacity: 1; transform: translateY(0); }
   </div>
 </div>
 
-<!-- PACKS VISUELS -->
-<div class="card visible" data-cat="packs">
-  <div class="card-thumb thumb-packs">🌍</div>
+<!-- CRÉATEURS -->
+<div class="card visible" data-cat="createurs">
+  <div class="card-thumb thumb-createurs">🎬</div>
   <div class="card-body">
-    <div class="card-cat">Pack Visuel</div>
-    <h3>100 Illustrations Africaines</h3>
-    <p>100 illustrations vectorielles IA de personnages, motifs et paysages africains. Format PNG + SVG.</p>
+    <div class="card-cat">Créateurs</div>
+    <h3>Pack Scripts TikTok</h3>
+    <p>Des scripts TikTok prêts à l'emploi pour créer du contenu viral et développer votre audience.</p>
     <div class="card-footer">
-      <span class="price">22€</span>
-      <a class="btn-wa" href="https://wa.me/33672542806?text=Bonjour%20Afrotok%20%F0%9F%91%8B%20Je%20souhaite%20commander%20le%20*Pack%20100%20Illustrations%20Africaines*%20(22%E2%82%AC).%20Merci%20!" target="_blank">
+      <span class="price">7 500 FCFA</span>
+      <a class="btn-wa" href="https://wa.me/33672542806?text=Bonjour+je+veux+commander+Pack+Scripts+TikTok" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Commander
       </a>
@@ -644,214 +493,25 @@ to { opacity: 1; transform: translateY(0); }
   </div>
 </div>
 
-<div class="card visible" data-cat="packs">
-  <div class="card-thumb thumb-packs">🎭</div>
+<div class="card visible" data-cat="createurs">
+  <div class="card-thumb thumb-createurs">✏️</div>
   <div class="card-body">
-    <div class="card-cat">Pack Visuel</div>
-    <h3>Motifs & Textures Wax</h3>
-    <p>50 motifs wax haute résolution pour vos fonds, stories et créations graphiques afro-inspirées.</p>
+    <div class="card-cat">Créateurs</div>
+    <h3>Kit Éditorial</h3>
+    <p>Un kit complet pour créer du contenu visuel professionnel, cohérent et impactant.</p>
     <div class="card-footer">
-      <span class="price">8€</span>
-      <a class="btn-wa" href="https://wa.me/33672542806?text=Bonjour%20Afrotok%20%F0%9F%91%8B%20Je%20souhaite%20commander%20le%20*Pack%20Motifs%20%26%20Textures%20Wax*%20(8%E2%82%AC).%20Merci%20!" target="_blank">
+      <span class="price">6 500 FCFA</span>
+      <a class="btn-wa" href="https://wa.me/33672542806?text=Bonjour+je+veux+commander+Kit+Editorial" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Commander
       </a>
     </div>
   </div>
 </div>
-```
 
   </div>
 </section>
 
-<!-- SCRIPTS SECTION -->
-
-<section class="scripts-section">
-  <div class="section-header">
-    <h2>Scripts WhatsApp Prêts</h2>
-    <p>Copie, colle et envoie — la vente devient simple</p>
-    <div class="gold-line"></div>
-  </div>
-
-  <div class="scripts-grid">
-
-```
-<div class="script-card">
-  <div class="script-label">🟢 Message d'accueil</div>
-  <h4>Quand un client vous écrit</h4>
-  <div class="script-msg" id="msg1">Bonjour et bienvenue chez Afrotok ! 🌍✨
-```
-
-Je suis ravi(e) de vous accueillir.
-Nous proposons des produits digitaux pour créateurs de contenu afro-inspirés : scripts TikTok, kits éditoriaux, guides et packs visuels.
-Que puis-je faire pour vous aujourd’hui ?</div>
-<button class="btn-copy" onclick="copyMsg('msg1', this)">📋 Copier</button>
-</div>
-
-```
-<div class="script-card">
-  <div class="script-label">📦 Présentation catalogue</div>
-  <h4>Pour présenter vos produits</h4>
-  <div class="script-msg" id="msg2">Voici notre catalogue Afrotok 🎨 :
-```
-
-📐 *Kits Éditoriaux* — dès 9€
-Templates, palettes, motifs afro
-
-🎬 *Scripts TikTok/Reels* — dès 10€
-Prêts à tourner, viraux et culturels
-
-📖 *Guides PDF* — dès 14€
-Stratégie créateur & monétisation
-
-🌍 *Packs Visuels* — dès 8€
-Illustrations, motifs wax HD
-
-Lequel vous intéresse ? 👇</div>
-<button class="btn-copy" onclick="copyMsg('msg2', this)">📋 Copier</button>
-</div>
-
-```
-<div class="script-card">
-  <div class="script-label">✅ Confirmation commande</div>
-  <h4>Après validation du paiement</h4>
-  <div class="script-msg" id="msg3">Parfait ! Votre commande est confirmée ✅
-```
-
-Merci pour votre confiance 🙏🌍
-
-Votre fichier vous sera envoyé dans les *prochaines minutes* directement ici sur WhatsApp.
-
-Si vous avez des questions après réception, n’hésitez pas à me contacter.
-
-À très bientôt chez Afrotok ! ✨</div>
-<button class="btn-copy" onclick="copyMsg('msg3', this)">📋 Copier</button>
-</div>
-
-```
-<div class="script-card">
-  <div class="script-label">💳 Instructions paiement</div>
-  <h4>Pour guider vers le paiement</h4>
-  <div class="script-msg" id="msg4">Pour finaliser votre commande, voici comment procéder 👇
-```
-
-💶 *Virement / PayPal / Lydia*
-Je vous envoie les coordonnées dès confirmation.
-
-Une fois le paiement effectué, envoyez-moi une capture d’écran et je vous livre le fichier immédiatement 📲
-
-Des questions ? Je suis là ! 😊</div>
-<button class="btn-copy" onclick="copyMsg('msg4', this)">📋 Copier</button>
-</div>
-
-```
-<div class="script-card">
-  <div class="script-label">⭐ Demande d'avis</div>
-  <h4>Après livraison du produit</h4>
-  <div class="script-msg" id="msg5">Bonjour ! J'espère que votre produit Afrotok vous satisfait 🌟
-```
-
-Si vous avez quelques secondes, votre retour m’est précieux 🙏
-Qu’est-ce qui vous a le plus plu ?
-
-Et si vous connaissez des créateurs qui pourraient en bénéficier, n’hésitez pas à partager notre boutique 🌍💛
-
-Merci et à très bientôt !</div>
-<button class="btn-copy" onclick="copyMsg('msg5', this)">📋 Copier</button>
-</div>
-
-```
-<div class="script-card">
-  <div class="script-label">🎁 Offre spéciale</div>
-  <h4>Pour relancer ou fidéliser</h4>
-  <div class="script-msg" id="msg6">Bonjour ! 👋 Une petite surprise chez Afrotok 🎁
-```
-
-Cette semaine, profitez de *-20% sur tous nos packs* avec le code : AFRO20
-
-C’est l’occasion parfaite pour enrichir votre contenu avec nos scripts TikTok, kits éditoriaux ou packs visuels 🌍✨
-
-Offre valable jusqu’à dimanche ! Intéressé(e) ?</div>
-<button class="btn-copy" onclick="copyMsg('msg6', this)">📋 Copier</button>
-</div>
-
-  </div>
-</section>
-
-<!-- LINK IN BIO -->
-
-<section class="linkinbio">
-  <div class="section-header">
-    <h2>Link in Bio</h2>
-    <p>Tous vos liens au même endroit</p>
-    <div class="gold-line"></div>
-  </div>
-
-  <div style="text-align:center; margin-top:28px;">
-    <div class="bio-avatar">🌍</div>
-    <div style="font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--cream); letter-spacing:2px;">AFROTOK</div>
-    <div style="font-size:0.8rem; color:var(--muted); margin-top:4px;">Créations digitales afro-inspirées</div>
-  </div>
-
-  <div class="bio-links">
-    <a class="bio-link" href="https://wa.me/33672542806?text=Bonjour%20Afrotok%20%F0%9F%91%8B%20Je%20viens%20du%20lien%20bio%20et%20souhaite%20d%C3%A9couvrir%20vos%20produits%20!" target="_blank">
-      <span class="bio-link-icon">🛍️</span>
-      <div class="bio-link-text">
-        <div class="bio-link-title">Boutique WhatsApp</div>
-        <div class="bio-link-sub">Commander un produit digital</div>
-      </div>
-      <span class="bio-link-arrow">›</span>
-    </a>
-
-```
-<a class="bio-link" href="https://wa.me/33672542806?text=Bonjour%20%F0%9F%91%8B%20Je%20cherche%20des%20scripts%20TikTok%2FReels%20africains%20!" target="_blank">
-  <span class="bio-link-icon">🎬</span>
-  <div class="bio-link-text">
-    <div class="bio-link-title">Scripts TikTok / Reels</div>
-    <div class="bio-link-sub">Dès 10€ — livrés en direct</div>
-  </div>
-  <span class="bio-link-arrow">›</span>
-</a>
-
-<a class="bio-link" href="https://wa.me/33672542806?text=Bonjour%20%F0%9F%91%8B%20Je%20souhaite%20voir%20vos%20kits%20%C3%A9ditoriaux%20!" target="_blank">
-  <span class="bio-link-icon">🎨</span>
-  <div class="bio-link-text">
-    <div class="bio-link-title">Kits Éditoriaux</div>
-    <div class="bio-link-sub">Templates & brand identité africaine</div>
-  </div>
-  <span class="bio-link-arrow">›</span>
-</a>
-
-<a class="bio-link" href="https://wa.me/33672542806?text=Bonjour%20%F0%9F%91%8B%20Je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20packs%20visuels%20africains%20!" target="_blank">
-  <span class="bio-link-icon">🌍</span>
-  <div class="bio-link-text">
-    <div class="bio-link-title">Packs Visuels</div>
-    <div class="bio-link-sub">Illustrations & motifs wax</div>
-  </div>
-  <span class="bio-link-arrow">›</span>
-</a>
-
-<a class="bio-link" href="https://wa.me/33672542806?text=Bonjour%20%F0%9F%91%8B%20Je%20veux%20en%20savoir%20plus%20sur%20vos%20guides%20PDF%20!" target="_blank">
-  <span class="bio-link-icon">📖</span>
-  <div class="bio-link-text">
-    <div class="bio-link-title">Guides & Formations PDF</div>
-    <div class="bio-link-sub">Stratégie créateur afro</div>
-  </div>
-  <span class="bio-link-arrow">›</span>
-</a>
-
-<a class="bio-link" href="https://wa.me/33672542806" target="_blank">
-  <span class="bio-link-icon">💬</span>
-  <div class="bio-link-text">
-    <div class="bio-link-title">Nous contacter</div>
-    <div class="bio-link-sub">WhatsApp Business — réponse rapide</div>
-  </div>
-  <span class="bio-link-arrow">›</span>
-</a>
-```
-
-  </div>
-</section>
 
 <!-- FOOTER -->
 
@@ -860,10 +520,6 @@ Offre valable jusqu’à dimanche ! Intéressé(e) ?</div>
   <p>Boutique digitale afro-inspirée · WhatsApp +33 6 72 54 28 06</p>
   <p style="margin-top:6px; font-size:0.7rem;">© 2025 Afrotok · Tous droits réservés</p>
 </footer>
-
-<!-- TOAST -->
-
-<div class="toast" id="toast">✅ Texte copié !</div>
 
 <script>
   // FILTRE CATALOGUE
@@ -880,26 +536,6 @@ Offre valable jusqu’à dimanche ! Intéressé(e) ?</div>
     });
   }
 
-  // COPIER SCRIPT
-  function copyMsg(id, btn) {
-    const text = document.getElementById(id).innerText;
-    navigator.clipboard.writeText(text).then(() => {
-      btn.classList.add('copied');
-      btn.textContent = '✅ Copié !';
-      showToast();
-      setTimeout(() => {
-        btn.classList.remove('copied');
-        btn.textContent = '📋 Copier';
-      }, 2000);
-    });
-  }
-
-  function showToast() {
-    const t = document.getElementById('toast');
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 2000);
-  }
-
   // ANIMATION AU SCROLL
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -910,7 +546,7 @@ Offre valable jusqu’à dimanche ! Intéressé(e) ?</div>
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.card, .script-card, .bio-link').forEach(el => {
+  document.querySelectorAll('.card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
