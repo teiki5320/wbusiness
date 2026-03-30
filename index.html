@@ -323,6 +323,209 @@ footer p {
   line-height: 1.8;
 }
 
+/* ── SANDBOX ── */
+.sandbox-section {
+  border-top: 1px solid rgba(255,80,80,0.15);
+  background: rgba(255,40,40,0.02);
+  padding: 60px 24px 80px;
+}
+.sandbox-container { max-width: 960px; margin: 0 auto; }
+.sandbox-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.sandbox-badge {
+  display: inline-block;
+  background: rgba(255,80,80,0.12);
+  border: 1px solid rgba(255,80,80,0.3);
+  color: #ff6060;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 3px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.sandbox-header h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.sandbox-header p { color: var(--text-muted); font-size: 0.85rem; }
+.sandbox-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.status-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #555;
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+.status-dot.connecting { background: #f59e0b; animation: pulse 1s infinite; }
+.status-dot.connected  { background: var(--wa); }
+.status-dot.error      { background: #ff6060; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+.sandbox-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.sandbox-btn {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.sandbox-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.sandbox-btn:not(:disabled):hover { opacity: 0.85; }
+
+.sb-filter-wrap {
+  display: none;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.s-tab {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.s-tab:hover { border-color: var(--gold); color: var(--text); }
+.s-tab.active { background: var(--gold); border-color: var(--gold); color: #000; font-weight: 600; }
+
+.sandbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+  min-height: 60px;
+}
+.sb-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.sb-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-2px); }
+.sb-card-img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+  background: var(--surface2);
+}
+.sb-card-img-placeholder {
+  width: 100%;
+  height: 100px;
+  background: var(--surface2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+.sb-card-body { padding: 14px; }
+.sb-card-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sb-card-country { font-size: 0.72rem; color: var(--text-muted); margin-bottom: 10px; }
+.sb-prices { display: flex; flex-wrap: wrap; gap: 5px; }
+.sb-price-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--gold-light);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.sb-price-btn:hover { background: var(--gold); color: #000; border-color: var(--gold); }
+.sb-price-btn.loading { opacity: 0.5; cursor: wait; }
+
+.sandbox-log {
+  background: #050505;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.log-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.log-dot { width:6px;height:6px;border-radius:50%; }
+.log-body {
+  padding: 12px 16px;
+  max-height: 200px;
+  overflow-y: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  scrollbar-width: thin;
+  scrollbar-color: #222 transparent;
+}
+.log-info    { color: #888; }
+.log-success { color: #4ade80; }
+.log-error   { color: #f87171; }
+.log-warn    { color: #fbbf24; }
+.log-result  { color: #60a5fa; }
+.sandbox-empty {
+  grid-column: 1/-1;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 40px 0;
+}
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(14px); }
@@ -513,6 +716,51 @@ footer p {
   </div>
 </section>
 
+<!-- SANDBOX RELOADLY — visible via ?sandbox=1 -->
+<section class="sandbox-section" id="sandboxSection" style="display:none">
+  <div class="sandbox-container">
+
+    <div class="sandbox-header">
+      <div>
+        <div class="sandbox-badge">SANDBOX · TEST UNIQUEMENT</div>
+        <h2>Reloadly Gift Cards</h2>
+        <p>Catalogue live depuis l'API sandbox — commandes fictives</p>
+      </div>
+      <div class="sandbox-status">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">Non connecté</span>
+      </div>
+    </div>
+
+    <div class="sandbox-controls">
+      <button class="sandbox-btn" id="connectBtn" onclick="SB.connect()">Connecter l'API</button>
+      <div class="sb-filter-wrap" id="sbFilters">
+        <button class="s-tab active" onclick="SB.filter('all', this)">Tous</button>
+        <button class="s-tab" onclick="SB.filter('free fire', this)">Free Fire</button>
+        <button class="s-tab" onclick="SB.filter('fortnite', this)">Fortnite</button>
+        <button class="s-tab" onclick="SB.filter('pubg', this)">PUBG</button>
+        <button class="s-tab" onclick="SB.filter('mobile legends', this)">Mob. Legends</button>
+        <button class="s-tab" onclick="SB.filter('razer', this)">Razer Gold</button>
+      </div>
+    </div>
+
+    <div class="sandbox-grid" id="sbGrid">
+      <div class="sandbox-empty">Cliquez sur "Connecter l'API" pour charger les produits</div>
+    </div>
+
+    <div class="sandbox-log">
+      <div class="log-header">
+        <span class="log-dot" style="background:#ff6060"></span>
+        <span class="log-dot" style="background:#fbbf24"></span>
+        <span class="log-dot" style="background:#4ade80"></span>
+        &nbsp;Console API
+      </div>
+      <div class="log-body" id="sbLog"></div>
+    </div>
+
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="logo">AFROTOK</div>
@@ -533,6 +781,163 @@ footer p {
     });
   }
 
+  // ── SANDBOX RELOADLY ──
+  // ⚠️ SANDBOX uniquement — ne jamais utiliser en production côté client
+  const SB = {
+    cid: '5abIUdg1MCycldLsngmTwGQrXNW5Yvn1',
+    csec: 'lsnPAI95jU-U7g0f2hUFnFBw1uUYC5-7Gva9qHnCmlmEpFBXM3liAB89iqKvSD0',
+    auth: 'https://auth.reloadly.com/oauth/token',
+    base: 'https://giftcards-sandbox.reloadly.com',
+    token: null,
+    all: [],
+
+    log(msg, type = 'info') {
+      const box = document.getElementById('sbLog');
+      const el = document.createElement('div');
+      el.className = 'log-' + type;
+      el.textContent = '[' + new Date().toLocaleTimeString() + '] ' + msg;
+      box.appendChild(el);
+      box.scrollTop = box.scrollHeight;
+    },
+
+    setStatus(state, text) {
+      const dot = document.getElementById('statusDot');
+      dot.className = 'status-dot ' + state;
+      document.getElementById('statusText').textContent = text;
+    },
+
+    async connect() {
+      const btn = document.getElementById('connectBtn');
+      btn.disabled = true;
+      this.setStatus('connecting', 'Connexion…');
+      this.log('Authentification Reloadly Sandbox…');
+      try {
+        const r = await fetch(this.auth, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            client_id: this.cid,
+            client_secret: this.csec,
+            grant_type: 'client_credentials',
+            audience: this.base
+          })
+        });
+        const d = await r.json();
+        if (!d.access_token) throw new Error(d.error_description || d.error || 'Token absent');
+        this.token = d.access_token;
+        this.log('✅ Token OK — expire dans ' + Math.floor(d.expires_in / 3600) + 'h', 'success');
+        this.setStatus('connected', 'Connecté');
+        await this.loadProducts();
+      } catch (e) {
+        this.log('❌ ' + e.message, 'error');
+        this.setStatus('error', 'Erreur');
+        btn.disabled = false;
+      }
+    },
+
+    async loadProducts() {
+      this.log('Chargement des produits (SN, taille max 200)…');
+      try {
+        const r = await fetch(this.base + '/products?countryCode=SN&size=200', {
+          headers: {
+            'Authorization': 'Bearer ' + this.token,
+            'Accept': 'application/com.reloadly.giftcards-v1+json'
+          }
+        });
+        const d = await r.json();
+        this.all = d.content || [];
+        this.log('✅ ' + this.all.length + ' produits chargés', 'success');
+        document.getElementById('sbFilters').style.display = 'flex';
+        this.render(this.all);
+      } catch (e) {
+        this.log('❌ ' + e.message, 'error');
+      }
+    },
+
+    render(list) {
+      const grid = document.getElementById('sbGrid');
+      if (!list.length) {
+        grid.innerHTML = '<div class="sandbox-empty">Aucun produit trouvé</div>';
+        return;
+      }
+      grid.innerHTML = '';
+      list.forEach(p => {
+        const prices = p.fixedSenderDenominations || [];
+        const logo = (p.logoUrls && p.logoUrls[0]) || '';
+        const card = document.createElement('div');
+        card.className = 'sb-card';
+        card.innerHTML =
+          (logo
+            ? '<img class="sb-card-img" src="' + logo + '" alt="' + p.productName + '" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\'">'
+            + '<div class="sb-card-img-placeholder" style="display:none">🎮</div>'
+            : '<div class="sb-card-img-placeholder">🎮</div>') +
+          '<div class="sb-card-body">' +
+            '<div class="sb-card-name" title="' + p.productName + '">' + p.productName + '</div>' +
+            '<div class="sb-card-country">' + (p.country ? p.country.name : 'Global') + ' · ID ' + p.productId + '</div>' +
+            '<div class="sb-prices">' +
+              prices.slice(0, 6).map(pr =>
+                '<button class="sb-price-btn" onclick="SB.order(' + p.productId + ',' + pr + ',\'' + p.productName.replace(/'/g,'') + '\')">' + pr + ' $</button>'
+              ).join('') +
+            '</div>' +
+          '</div>';
+        grid.appendChild(card);
+      });
+    },
+
+    filter(term, el) {
+      document.querySelectorAll('.s-tab').forEach(t => t.classList.remove('active'));
+      if (el) el.classList.add('active');
+      const filtered = term === 'all'
+        ? this.all
+        : this.all.filter(p => p.productName.toLowerCase().includes(term));
+      this.log('Filtre "' + term + '" → ' + filtered.length + ' produits');
+      this.render(filtered);
+    },
+
+    async order(productId, unitPrice, name) {
+      this.log('📦 Commande test : ' + name + ' — ' + unitPrice + ' USD');
+      const btns = document.querySelectorAll('.sb-price-btn');
+      btns.forEach(b => b.classList.add('loading'));
+      try {
+        const r = await fetch(this.base + '/orders', {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer ' + this.token,
+            'Content-Type': 'application/json',
+            'Accept': 'application/com.reloadly.giftcards-v1+json'
+          },
+          body: JSON.stringify({
+            productId,
+            quantity: 1,
+            unitPrice,
+            customIdentifier: 'sb-' + Date.now(),
+            senderName: 'AFROTOK',
+            recipientEmail: 'sandbox@afrotok.test',
+            recipientPhoneDetails: { countryCode: 'SN', phoneNumber: '771234567' }
+          })
+        });
+        const d = await r.json();
+        if (d.transactionId) {
+          this.log('✅ Transaction : ' + d.transactionId, 'success');
+          if (d.pins && d.pins.length) d.pins.forEach(p => this.log('🔑 Code : ' + p.code, 'result'));
+          if (d.redemptionInstructions) this.log('📋 ' + d.redemptionInstructions.slice(0, 120), 'info');
+        } else {
+          this.log('⚠️ Réponse : ' + JSON.stringify(d).slice(0, 200), 'warn');
+        }
+      } catch (e) {
+        this.log('❌ ' + e.message, 'error');
+      }
+      btns.forEach(b => b.classList.remove('loading'));
+    }
+  };
+
+  // Afficher la section sandbox si URL contient ?sandbox=1
+  if (new URLSearchParams(window.location.search).get('sandbox') === '1') {
+    document.getElementById('sandboxSection').style.display = 'block';
+    SB.log('Section sandbox activée. Cliquez sur "Connecter l\'API".', 'info');
+  }
+
+  // ── SCROLL ANIMATIONS ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
